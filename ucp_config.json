@@ -1,0 +1,12 @@
+{
+  "database": "test",
+  "fallback_databases": ["lupmaxbetaa", "lupmax_schema_final_20261008"],
+  "port": 3306,
+  "ucp_port": 8770,
+  "credential_source": "phpmyadmin",
+  "credential_file": "C:/xampp/phpMyAdmin/config.inc.php",
+  "auto_start_xampp_mysql": true,
+  "xampp_mysqld_path": "C:/xampp/mysql/bin/mysqld.exe",
+  "xampp_my_ini_path": "C:/xampp/mysql/bin/my.ini"
+}
+

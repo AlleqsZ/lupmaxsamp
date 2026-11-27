@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+vendor/
+*.log
+.env
+ucp_config.local.json

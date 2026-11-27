@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LupMax RPG — Player Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/ucp.css?v=4.0" />
+</head>
+
+<body>
+  <div class="ucp-shell lupmax-topnav-shell">
+    <!-- ====================================================================
+         LUPMAX OBSIDIAN STUDIO — ARCHITECTURAL TOP COMMAND BAR
+         ==================================================================== -->
+    <header class="ucp-topbar lupmax-navbar" id="lupmaxTopbar">
+      <div class="lupmax-nav-inner">
+        <!-- Brand Mark: Architectural LupMax Wolf Monogram -->
+        <button type="button" class="lupmax-brand sidebar-brand" data-nav="dashboard" title="LupMax RPG — Acasă">
+          <div class="brand-mark lupmax-crest">
+            <svg class="lupmax-wolf-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M13 11L23.5 21L32 17L40.5 21L51 11L49 28.5L53.5 37L43.5 46.5L32 55L20.5 46.5L10.5 37L15 28.5L13 11Z" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" />
+              <path d="M18 18L23 26L17 34.5L25 43.5L32 49.5L39 43.5L47 34.5L41 26L46 18" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-opacity="0.72" />
+              <polygon points="22,29.5 28.5,31.2 24.5,34" fill="currentColor" />
+              <polygon points="42,29.5 35.5,31.2 39.5,34" fill="currentColor" />
+              <path d="M32 25V40.5M28.5 40.5L32 44.5L35.5 40.5Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="currentColor" />
+            </svg>
+          </div>
+          <div class="brand-meta">
+            <div class="brand-title">LUP<span>MAX</span></div>
+            <div class="brand-subtitle">SAN ANDREAS RPG</div>
+          </div>
+        </button>
+
+        <!-- Primary Navigation -->
+        <nav class="lupmax-nav sidebar-nav" id="lupmaxMainNav" aria-label="Meniu Principal">
+          <button type="button" class="nav-item active" data-nav="dashboard">
+            <span class="nav-text">Acasă</span>
+          </button>
+
+          <button type="button" class="nav-item" data-nav="profile">
+            <span class="nav-text">Profil</span>
+          </button>
+
+          <div class="nav-dropdown" data-dropdown="community">
+            <button type="button" class="nav-item nav-dropdown-trigger" data-action="toggle-nav-dd" data-dd="community">
+              <span class="nav-text">Comunitate</span>
+              <span class="nav-caret">&#9662;</span>
+            </button>
+            <div class="nav-dropdown-menu">
+              <button type="button" class="nav-dd-item nav-item" data-nav="players">
+                <span>Jucători &amp; Staff</span>
+                <span class="nav-badge" id="navBadgeUsers">0</span>
+              </button>
+              <button type="button" class="nav-dd-item nav-item" data-nav="leaderboards">
+                <span>Clasamente</span>
+                <span class="nav-badge">TOP</span>
+              </button>
+              <button type="button" class="nav-dd-item nav-item" data-nav="updates">
+                <span>Updates &amp; Changelog</span>
+                <span class="nav-badge" id="navBadgeUpdates">0</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="nav-dropdown" data-dropdown="orgs">
+            <button type="button" class="nav-item nav-dropdown-trigger" data-action="toggle-nav-dd" data-dd="orgs">
+              <span class="nav-text">Organizații</span>
+              <span class="nav-caret">&#9662;</span>
+            </button>
+            <div class="nav-dropdown-menu">
+              <button type="button" class="nav-dd-item nav-item" data-nav="factions">
+                <span>Facțiuni &amp; Aplicații</span>
+                <span class="nav-badge" id="navBadgeApps">0</span>
+              </button>
+              <button type="button" class="nav-dd-item" data-nav="factions" data-subtab="factions:leader_apps">
+                <span>Aplicații Lider</span>
+                <span class="nav-badge badge-accent" id="navBadgeLeaderApps">0</span>
+              </button>
+              <button type="button" class="nav-dd-item nav-item" data-nav="clans">
+                <span>Clanuri Oficiale</span>
+                <span class="nav-badge" id="navBadgeClans">0</span>
+              </button>
+              <button type="button" class="nav-dd-item nav-item" data-nav="wars">
+                <span>Wars &amp; Teritorii (48)</span>
+                <span class="nav-badge badge-red">LIVE</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="nav-dropdown" data-dropdown="economy">
+            <button type="button" class="nav-item nav-dropdown-trigger" data-action="toggle-nav-dd" data-dd="economy">
+              <span class="nav-text">Economie</span>
+              <span class="nav-caret">&#9662;</span>
+            </button>
+            <div class="nav-dropdown-menu">
+              <button type="button" class="nav-dd-item nav-item" data-nav="economy">
+                <span>Piață Auto, Case &amp; Bizz</span>
+              </button>
+              <button type="button" class="nav-dd-item nav-item" data-nav="shop">
+                <span>Shop VIP &amp; Donații</span>
+                <span class="nav-badge badge-accent">PP</span>
+              </button>
+            </div>
+          </div>
+
+          <button type="button" class="nav-item nav-item-wheel" data-nav="wheel" title="Roata Norocului LupMax">
+            <span class="nav-text">Roata</span>
+            <span class="wheel-ready-dot hidden" id="navWheelReadyDot"></span>
+          </button>
+
+          <div class="nav-dropdown" data-dropdown="moderation">
+            <button type="button" class="nav-item nav-dropdown-trigger" data-action="toggle-nav-dd" data-dd="moderation">
+              <span class="nav-text">Suport</span>
+              <span class="nav-badge" id="navBadgeModTotal">0</span>
+              <span class="nav-caret">&#9662;</span>
+            </button>
+            <div class="nav-dropdown-menu">
+              <button type="button" class="nav-dd-item nav-item" data-nav="complaints">
+                <span>Reclamații</span>
+                <span class="nav-badge badge-red" id="navBadgeComplaints">0</span>
+              </button>
+              <button type="button" class="nav-dd-item nav-item" data-nav="tickets">
+                <span>Tichete Suport</span>
+                <span class="nav-badge badge-amber" id="navBadgeTickets">0</span>
+              </button>
+              <button type="button" class="nav-dd-item nav-item" data-nav="bans">
+                <span>Banlist &amp; Unban</span>
+                <span class="nav-badge" id="navBadgeBans">0</span>
+              </button>
+              <button type="button" class="nav-dd-item nav-item" data-nav="security">
+                <span>Securitate &amp; /Email</span>
+                <span class="nav-badge" id="navBadgeEmails">0</span>
+              </button>
+            </div>
+          </div>
+
+          <button type="button" class="nav-item nav-item-staff hidden" id="navItemAdmin" data-nav="admin">
+            <span class="nav-text">Admin</span>
+          </button>
+        </nav>
+
+        <!-- Right Utility Dock -->
+        <div class="topbar-right lupmax-right-dock">
+          <div class="global-search-box lupmax-search-box" id="globalSearchWrap">
+            <svg class="search-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="7.5" />
+              <line x1="20" y1="20" x2="16.4" y2="16.4" />
+            </svg>
+            <input type="text" id="globalPlayerSearch" placeholder="Caută jucător..." autocomplete="off" />
+            <button type="button" class="search-go-btn" id="globalSearchBtn">Go</button>
+            <div class="search-dropdown hidden" id="globalSearchDropdown"></div>
+          </div>
+
+          <div class="topbar-online-chip lupmax-online-pill" title="Status conexiune server &amp; MySQL">
+            <span class="pill-dot dot-green"></span>
+            <strong id="topbarOnlineCount">0 Online</strong>
+            <span class="hidden" id="topbarDbName">MySQL</span>
+          </div>
+
+          <!-- Discreet Appearance / Theme Popover (Replaces cluttered rainbow bar!) -->
+          <div class="theme-switcher-anchor" id="themeSwitcherAnchor">
+            <button type="button" class="topbar-icon-btn" id="themeMixerToggleBtn"
+              data-action="toggle-theme-mixer" aria-expanded="false" aria-controls="themeMixerPopover"
+              title="Aspect &amp; Culoare Accent">
+              <span class="theme-mixer-orb" id="mixSwatchOrb" aria-hidden="true"></span>
+            </button>
+
+            <div class="theme-mixer-popover hidden" id="themeMixerPopover" role="dialog" aria-label="Aspect Panou">
+              <div class="mixer-head">
+                <div class="mixer-head-left">
+                  <span class="mixer-title">Aspect &amp; Accent</span>
+                  <span class="mixer-badge" id="activeThemeLabel">Obsidian Gold</span>
+                </div>
+                <button type="button" class="mixer-close-btn" data-action="close-theme-mixer" aria-label="Închide">✕</button>
+              </div>
+
+              <div class="theme-preset-section">
+                <div class="mixer-slot-label" style="margin-bottom:8px">Palete Curate</div>
+                <div class="theme-swatches">
+                  <button type="button" class="theme-swatch sw-obsidian active" data-action="set-theme" data-theme="obsidian" title="Obsidian Gold (Default)"></button>
+                  <button type="button" class="theme-swatch sw-cobalt" data-action="set-theme" data-theme="cobalt" title="Steel Cobalt"></button>
+                  <button type="button" class="theme-swatch sw-arctic" data-action="set-theme" data-theme="arctic" title="Titanium Silver"></button>
+                  <button type="button" class="theme-swatch sw-crimson" data-action="set-theme" data-theme="crimson" title="Crimson Noir"></button>
+                  <button type="button" class="theme-swatch sw-emerald" data-action="set-theme" data-theme="emerald" title="Emerald Slate"></button>
+                  <button type="button" class="theme-swatch sw-ocean" data-action="set-theme" data-theme="ocean" title="Deep Ocean"></button>
+                  <button type="button" class="theme-swatch sw-amber" data-action="set-theme" data-theme="amber" title="Warm Amber"></button>
+                  <button type="button" class="theme-swatch sw-copper" data-action="set-theme" data-theme="copper" title="Brushed Copper"></button>
+                  <button type="button" class="theme-swatch sw-amethyst" data-action="set-theme" data-theme="amethyst" title="Royal Violet"></button>
+                  <button type="button" class="theme-swatch sw-lime" data-action="set-theme" data-theme="lime" title="Tactical Olive"></button>
+                </div>
+              </div>
+
+              <div class="mixer-divider"></div>
+
+              <div class="mixer-mode-switch" role="tablist">
+                <button type="button" class="mixer-mode-btn active" data-action="set-mixer-mode" data-mode="dual">Mix 2 Culori</button>
+                <button type="button" class="mixer-mode-btn" data-action="set-mixer-mode" data-mode="single">1 Culoare</button>
+              </div>
+
+              <div class="mixer-preview-strip" id="mixPreviewStrip">
+                <div class="mixer-result-meta">
+                  <span class="mixer-result-kicker" id="mixResultLabel">Accent personalizat</span>
+                  <span class="mixer-result-hex" id="mixPreviewResultHex">#D4A853</span>
+                </div>
+                <span class="mixer-sample-pill" id="mixPreviewSamplePill">Preview</span>
+              </div>
+
+              <div class="mixer-slots-grid" id="mixSlotsGrid">
+                <div class="mixer-slot-card" id="mixSlot1Card">
+                  <label class="mixer-slot-label" for="mixColor1Input">Culoare 1</label>
+                  <div class="mixer-input-row">
+                    <input type="color" class="mixer-color-input" id="mixColor1Input" value="#d4a853" aria-label="Culoare 1" />
+                    <code class="mixer-hex-tag" id="mixColor1Hex">#D4A853</code>
+                  </div>
+                </div>
+                <button type="button" class="mixer-swap-btn" id="mixSwapBtn" data-action="swap-mix-colors" title="Inversează">⇄</button>
+                <div class="mixer-slot-card" id="mixSlot2Card">
+                  <label class="mixer-slot-label" for="mixColor2Input">Culoare 2</label>
+                  <div class="mixer-input-row">
+                    <input type="color" class="mixer-color-input" id="mixColor2Input" value="#f59e0b" aria-label="Culoare 2" />
+                    <code class="mixer-hex-tag" id="mixColor2Hex">#F59E0B</code>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mixer-ratio-box" id="mixRatioBox">
+                <div class="mixer-ratio-head">
+                  <span>Balans</span>
+                  <strong id="mixRatioValue">50% / 50%</strong>
+                </div>
+                <input type="range" class="mixer-range" id="mixRatioRange" min="0" max="100" step="1" value="50" aria-label="Raport culori" />
+              </div>
+
+              <div class="mixer-footer">
+                <span class="mixer-badge" id="mixModeBadge">Custom</span>
+                <div class="mixer-footer-btns">
+                  <button type="button" class="btn btn-outline btn-xs" data-action="reset-theme-mixer">Reset</button>
+                  <button type="button" class="btn btn-primary btn-xs" data-action="close-theme-mixer">Gata</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button type="button" class="topbar-icon-btn" id="topbarEmailsBtn" data-nav="security" title="Mesaje /email">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z" />
+              <polyline points="22,7 12,13.5 2,7" />
+            </svg>
+            <span class="notif-counter hidden" id="topbarEmailBadge">0</span>
+          </button>
+
+          <button type="button" class="topbar-icon-btn topbar-sfx-btn sfx-on" id="topbarAudioBtn" title="Sunete UI (ON / MUTE)">
+            <span id="topbarAudioIconWrap" style="display:inline-flex;align-items:center">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+              </svg>
+            </span>
+            <span class="hidden" id="topbarAudioLabel">SFX</span>
+          </button>
+
+          <div id="topbarAuthArea">
+            <button type="button" class="btn btn-primary btn-sm" data-action="open-login">
+              Autentificare
+            </button>
+          </div>
+
+          <button type="button" class="topbar-icon-btn mobile-menu-btn" id="mobileMenuBtn" title="Meniu">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="7" x2="21" y2="7" />
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="17" x2="21" y2="17" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Drawer -->
+      <div class="lupmax-mobile-drawer hidden" id="ucpSidebar">
+        <div class="mobile-drawer-grid">
+          <button type="button" class="nav-item" data-nav="dashboard">Acasă</button>
+          <button type="button" class="nav-item" data-nav="profile">Profil</button>
+          <button type="button" class="nav-item nav-item-wheel" data-nav="wheel">Roata LupMax</button>
+          <button type="button" class="nav-item" data-nav="players">Jucători &amp; Staff</button>
+          <button type="button" class="nav-item" data-nav="leaderboards">Clasamente</button>
+          <button type="button" class="nav-item" data-nav="updates">Updates</button>
+          <button type="button" class="nav-item" data-nav="factions">Facțiuni</button>
+          <button type="button" class="nav-item" data-nav="factions" data-subtab="factions:leader_apps">Aplicații Lider</button>
+          <button type="button" class="nav-item" data-nav="clans">Clanuri</button>
+          <button type="button" class="nav-item" data-nav="wars">Wars &amp; Turfs</button>
+          <button type="button" class="nav-item" data-nav="economy">Piață Auto &amp; Case</button>
+          <button type="button" class="nav-item" data-nav="shop">Shop VIP</button>
+          <button type="button" class="nav-item" data-nav="complaints">Reclamații</button>
+          <button type="button" class="nav-item" data-nav="tickets">Tichete</button>
+          <button type="button" class="nav-item" data-nav="bans">Banlist</button>
+          <button type="button" class="nav-item" data-nav="security">Securitate &amp; /Email</button>
+          <button type="button" class="nav-item nav-item-staff hidden" id="navItemAdminMobile" data-nav="admin">Admin Panel</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ====================================================================
+         MAIN WORKSPACE
+         ==================================================================== -->
+    <div class="ucp-main lupmax-main-container">
+      <!-- Quiet Editorial Page Header -->
+      <div class="ucp-subbar lupmax-subbar">
+        <div class="subbar-title-group">
+          <div class="subbar-breadcrumb">
+            <span class="lm-bc-brand">LUPMAX</span>
+            <span class="bc-sep">/</span>
+            <span id="viewCategoryTag">Player Hub</span>
+          </div>
+          <h1 class="subbar-heading" id="viewHeadingTitle">Acasă</h1>
+        </div>
+
+        <div class="subbar-actions" id="viewQuickActions">
+          <div class="subbar-meta-item" id="topbarDailyJob" title="Jobul Zilei pe server (/dailyjob)">
+            <span class="subbar-meta-label">Jobul Zilei</span>
+            <strong id="dailyJobName">...</strong>
+          </div>
+          <span class="subbar-divider"></span>
+          <span class="security-fp-badge" id="topbarFingerprintBadge" title="Protecție Anti-Hijack &amp; CSRF">
+            Sesiune verificată
+          </span>
+          <button type="button" class="btn btn-outline btn-xs" id="topbarRefreshBtn" title="Reîncarcă datele live">
+            Actualizează
+          </button>
+        </div>
+      </div>
+
+      <!-- Dynamic View Container -->
+      <main class="ucp-viewport lupmax-viewport" id="ucpViewport">
+        <div class="ucp-loading-state">
+          <div class="spinner-ring"></div>
+          <div class="loading-title">Se încarcă datele din server...</div>
+        </div>
+      </main>
+
+      <!-- Quiet Studio Footer -->
+      <footer class="lupmax-footer">
+        <div class="lm-footer-left">
+          <strong>LUPMAX RPG</strong>
+          <span class="footer-sep">&middot;</span>
+          <span class="mono-text">rpg.lupmax.ro:7777</span>
+        </div>
+        <div class="lm-footer-right">
+          <span>Sincronizare MySQL Live &middot; Anti-Hijack Shield</span>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Modal Overlay -->
+  <div class="ucp-modal-backdrop hidden" id="ucpModalBackdrop">
+    <div class="ucp-modal" id="ucpModalContainer" role="dialog" aria-modal="true">
+      <div class="modal-header">
+        <h3 class="modal-title" id="ucpModalTitle">Acțiune</h3>
+        <button type="button" class="modal-close-btn" data-action="close-modal" aria-label="Închide">✕</button>
+      </div>
+      <div class="modal-body" id="ucpModalBody"></div>
+    </div>
+  </div>
+
+  <!-- Toast Stack -->
+  <div class="ucp-toast-container" id="ucpToastContainer"></div>
+
+  <script src="/ucp.js?v=4.0"></script>
+  <!-- Atmosferă Fotorealistă de Iarnă / Crăciun (Comentează linia pentru a dezactiva) -->
+  <script src="/christmas.js?v=4.0"></script>
+</body>
+
+</html>
